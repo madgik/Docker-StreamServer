@@ -64,13 +64,14 @@ To gracefully stop your docker container:
 3. Close the console.
 
 ## Run multiple Stream Servers
-You can run multiple stream servers concurently on different docker containers. Just choose a different container name and forward 8989 port to a different port on your local machine.
+You can run multiple stream servers, concurently, on different docker containers. Just choose a different container name and forward 8989 port to a different port on your local machine.
 
 1. Open a terminal (Docker Quickstart Terminal on Windows/Mac or standard terminal on Linux).
 2. Execute the following command to start a streamserver named second_streamserver that produces a stream accesible by your **docker machine IP**:8990  
-```bash
-docker run -i -t --rm -p 8990:8989 --name second_streamserver streamserver
-```
+  ```bash
+  docker run -i -t --rm -p 8990:8989 --name second_streamserver streamserver
+  ```
+3. Test the Stream Server by opening http://**docker-machine-ip**:8990/measurements on your browser
 
 ##Troubleshoot
 * If you are getting an error like:
