@@ -51,7 +51,24 @@ Linux only: [Use docker without sudo](http://askubuntu.com/a/477554)
     It will return your docker-machine ip **(from now on use this instead of localhost if you are on Windows or Mac)**.
 
 ## Test the Stream Server
-Test the Stream Server by opening http://**docker-machine-ip**:8989/measurements on your browser
+Test the Stream Server by calling curl on http://**docker-machine-ip**:8989/measurements
+
+```bash
+$ curl http://docker-machine-ip:8989/measurements
+{"schema":[["timestamp","text"],["cast(strftime(\u0027%s\u0027, timestamp) as long)",null],["sensor","TEXT"],["value",null]]}
+["2016-03-07T20:13:55+00:00",1.127384714E9,"TC255",58.7]
+["2016-03-07T20:13:56+00:00",1.127384715E9,"TC255",58.099]
+["2016-03-07T20:13:57+00:00",1.127384716E9,"TC255",57.5]
+["2016-03-07T20:13:58+00:00",1.127384717E9,"TC255",56.9]
+["2016-03-07T20:13:59+00:00",1.127384718E9,"TC255",56.2]
+["2016-03-07T20:14:00+00:00",1.127384719E9,"TC255",55.799]
+["2016-03-07T20:14:01+00:00",1.12738472E9,"TC255",55.2]
+["2016-03-07T20:14:02+00:00",1.127384721E9,"TC255",54.7]
+["2016-03-07T20:14:03+00:00",1.127384722E9,"TC255",54.099]
+["2016-03-07T20:14:04+00:00",1.127384723E9,"TC255",53.7]
+```
+
+or open http://**docker-machine-ip**:8989/measurements on Chrome
 
 ![Alt text](/screenshots/test.png?raw=true "Test Stream Server container")
 
