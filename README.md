@@ -10,12 +10,12 @@ Install Docker (on linux) or Docker-toolbox (on Windows/Mac)
 Linux only: [Use docker without sudo](http://askubuntu.com/a/477554)
 
 ## Stream Server Installation
-1. Download zip and unzip or “git clone” from Stream Server repository
+1. Open a terminal (Docker Quickstart Terminal on Windows/Mac or standard terminal on Linux).
+2. Download zip and unzip or “git clone” from Stream Server repository
 
   ```bash
   $ git clone https://github.com/madgik/Docker-StreamServer.git
   ```
-2. Open a terminal (Docker Quickstart Terminal on Windows/Mac or standard terminal on Linux).
 3. Linux only:
 
   ```bash
