@@ -55,7 +55,7 @@ Test the Stream Server by calling curl on http://**docker-machine-ip**:8989/meas
 
 ```bash
 $ curl http://docker-machine-ip:8989/measurements
-{"schema":[["timestamp","text"],["cast(strftime(\u0027%s\u0027, timestamp) as long)",null],["sensor","TEXT"],["value",null]]}
+{"schema":[["timestamp",null],["assembly",null],["sensor",null],["value",null]]}
 ["2016-03-07T20:13:55+00:00",1.127384714E9,"TC255",58.7]
 ["2016-03-07T20:13:56+00:00",1.127384715E9,"TC255",58.099]
 ["2016-03-07T20:13:57+00:00",1.127384716E9,"TC255",57.5]
