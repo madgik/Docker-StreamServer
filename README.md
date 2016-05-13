@@ -100,6 +100,8 @@ The csv files must have the following format:
 
 Streamserver use the files in the "dataset" directory to produce infinite stream data. The timetstamps must be orderedchronogically from older to newer. Streamserver use the timestamps only to simulate the intervals between two different tuples of the stream. The streamserver replaces the timestamps with current timestamps.
 
+After this you must re-built and re-run the docker container.
+
 ##Troubleshoot
 * If you are getting an error like:
   
