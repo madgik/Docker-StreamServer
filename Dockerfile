@@ -1,7 +1,8 @@
 FROM ubuntu:16.04
 
 # stream server
-ADD ExternalServer.tar.gz /root/
+ADD streamserver /root/
+ADD datasets /root/datasets/
 
 #ports
 EXPOSE 8989

@@ -32,7 +32,6 @@ Linux only: [Use docker without sudo](http://askubuntu.com/a/477554)
   $ docker build -t streamserver .
   ```
 
-
 ## Run Stream Server container
 1. Execute:
   ```bash
@@ -90,6 +89,17 @@ You can run multiple stream servers, concurently, on different docker containers
   ```
 3. Test the Stream Server by opening http://**docker-machine-ip**:8990/measurements on your browser
 
+## Add datasets
+
+To load your own dataset into the stream server you must place your csv file into the "dataset" folder. The name of the fiule must hasve a ".csv" suffix. The filename determines the uri address, i.e. the "measurements.csv" dataset is available at the "/measurements" URI.  
+
+The csv files must have the following format:
+
+	HEADER : The first row must contain the name of the columns for example (timestamp, sensor, value). The first column must be always the timestamp.
+	VALUES : The timestamp must be in the RCF3339 format. For example 2016-03-07T20:13:55+00:00 is a valid timestamp.
+
+Streamserver use the files in the "dataset" directory to produce infinite stream data. The timetstamps must be orderedchronogically from older to newer. Streamserver use the timestamps only to simulate the intervals between two different tuples of the stream. The streamserver replaces the timestamps with current timestamps.
+
 ##Troubleshoot
 * If you are getting an error like:
   
@@ -106,4 +116,3 @@ You can run multiple stream servers, concurently, on different docker containers
   ```bash
   docker kill streamserver
   ```
-  
